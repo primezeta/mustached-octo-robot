@@ -26,3 +26,15 @@
 *.exe
 *.out
 *.app
+
+/Binaries
+/DerivedDataCache
+/Intermediate/Build
+/Intermediate/Config
+/Intermediate/ReimportCache
+/Intermediate/CachedAssetRegistry.bin
+/Intermediate/Staging
+/Saved
+*.opensdf
+*.sdf
+*.suo
