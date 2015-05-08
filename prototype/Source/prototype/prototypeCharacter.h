@@ -16,6 +16,14 @@ class AprototypeCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
+private:
+	bool CharacterIsSelected;
+	APlayerController const * PlayerController();
+	//UActorInteractionSceneComponent * ActorInteractor();
+	FVector MousePosition();
+	FVector2D ScreenMousePosition();
+	FVector PlayerPosition();
+
 protected:
 
 	/** Called for side to side input */
@@ -31,6 +39,11 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 
+	// Called every frame
+	virtual void Tick(float DeltaSeconds) override;
+
+	void MoveCommand_MouseDown();
+	void MoveCommand_MouseUp();
 
 public:
 	AprototypeCharacter(const FObjectInitializer& ObjectInitializer);

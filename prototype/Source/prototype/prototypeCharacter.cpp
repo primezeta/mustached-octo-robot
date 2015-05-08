@@ -47,28 +47,94 @@ AprototypeCharacter::AprototypeCharacter(const FObjectInitializer& ObjectInitial
 void AprototypeCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	// set up gameplay key bindings
-	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	InputComponent->BindAxis("MoveRight", this, &AprototypeCharacter::MoveRight);
-
-	InputComponent->BindTouch(IE_Pressed, this, &AprototypeCharacter::TouchStarted);
-	InputComponent->BindTouch(IE_Released, this, &AprototypeCharacter::TouchStopped);
+	//InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	//InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	//InputComponent->BindAxis("MoveRight", this, &AprototypeCharacter::MoveRight);
+	//InputComponent->BindTouch(IE_Pressed, this, &AprototypeCharacter::TouchStarted);
+	//InputComponent->BindTouch(IE_Released, this, &AprototypeCharacter::TouchStopped);
+	InputComponent->BindAction("MouseButton_Left", IE_Pressed, this, &AprototypeCharacter::MoveCommand_MouseDown);
+	InputComponent->BindAction("MouseButton_Left", IE_Released, this, &AprototypeCharacter::MoveCommand_MouseUp);
 }
 
-void AprototypeCharacter::MoveRight(float Value)
+// Called every frame
+void AprototypeCharacter::Tick(float DeltaTime)
 {
-	// add movement in that direction
-	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	Super::Tick(DeltaTime);
+
+	if (CharacterIsSelected)
+	{
+		//ActorInteractor()->DrawMoveCommandLine(PlayerPosition(), MousePosition());
+	}
 }
 
-void AprototypeCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
+//MouseDragLine.DrawLine(PlayerLocation, FVector(PlayerLocation.X, mx, my), LineColor, LineDepthPriority, LineThickness, LineLifeTime);
+void AprototypeCharacter::MoveCommand_MouseDown()
 {
-	// jump on any touch
-	Jump();
+	static const bool bTraceComplex = false;
+	FHitResult HitResult;
+	if (PlayerController()->GetHitResultAtScreenPosition(ScreenMousePosition(), ECC_Visibility, bTraceComplex, HitResult) == true)
+	{
+		CharacterIsSelected = false; //First assume the player character was not clicked...
+		APawn* ClickedPawn = Cast<APawn>(HitResult.GetActor());
+		if (ClickedPawn == Cast<APawn>(this))
+		{
+			//The player character was clicked!
+			//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "Yay!");
+			CharacterIsSelected = true;
+		}
+	}
 }
 
-void AprototypeCharacter::TouchStopped(const ETouchIndex::Type FingerIndex, const FVector Location)
+void AprototypeCharacter::MoveCommand_MouseUp()
 {
-	StopJumping();
+	CharacterIsSelected = false;
 }
 
+//void AprototypeCharacter::MoveRight(float Value)
+//{
+//	// add movement in that direction
+//	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+//}
+//
+//void AprototypeCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
+//{
+//	// jump on any touch
+//	Jump();
+//}
+//
+//void AprototypeCharacter::TouchStopped(const ETouchIndex::Type FingerIndex, const FVector Location)
+//{
+//	StopJumping();
+//}
+
+APlayerController const * AprototypeCharacter::PlayerController()
+{
+	static APlayerController * ThePlayerController = nullptr;
+	if (ThePlayerController == nullptr)
+	{
+		ThePlayerController = Cast<APlayerController>(GetController());
+	}
+	return ThePlayerController;
+}
+
+FVector AprototypeCharacter::MousePosition()
+{
+	static FVector Position;
+	PlayerController()->GetMousePosition(Position.Y, Position.Z);
+	Position.X = PlayerPosition().X;
+	return Position;
+}
+
+FVector2D AprototypeCharacter::ScreenMousePosition()
+{
+	static FVector2D Position;
+	PlayerController()->GetMousePosition(Position.X, Position.Y);
+	return Position;
+}
+
+FVector AprototypeCharacter::PlayerPosition()
+{
+	static FVector Position;
+	Position = this->GetActorLocation();
+	return Position;
+}
