@@ -4,4 +4,5 @@
 
 
 IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, prototype, "prototype" );
- 
+
+DEFINE_LOG_CATEGORY(CriticalErrors);

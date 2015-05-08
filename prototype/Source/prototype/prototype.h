@@ -4,5 +4,7 @@
 #define __PROTOTYPE_H__
 
 #include "EngineMinimal.h"
-				   
+
+DECLARE_LOG_CATEGORY_EXTERN(CriticalErrors, Log, All);
+
 #endif
