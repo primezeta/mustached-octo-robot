@@ -1,67 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<None Include="..\..\prototype.uproject" />
-		<Filter Include="Source">
-			<UniqueIdentifier>{99D51457-73B4-4B6F-9EEC-839D1343E82D}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\prototype.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<None Include="..\..\Source\prototypeEditor.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<Filter Include="Config">
-			<UniqueIdentifier>{804B7E92-61EB-41D0-9260-9BB5E9CA856A}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Config\DefaultEditor.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEditorUserSettings.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEngine.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultGame.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultInput.ini">
-			<Filter>Config</Filter>
-		</None >
-		<Filter Include="Source\prototype">
-			<UniqueIdentifier>{EF91B5EF-477D-4020-B46D-F5C7E9EDBF3A}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\prototype\prototype.Build.cs">
-			<Filter>Source\prototype</Filter>
-		</None >
-		<ClCompile Include="..\..\Source\prototype\prototype.cpp">
-			<Filter>Source\prototype</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\prototype\prototype.h">
-			<Filter>Source\prototype</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\prototype\prototypeCharacter.cpp">
-			<Filter>Source\prototype</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\prototype\prototypeCharacter.h">
-			<Filter>Source\prototype</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\prototype\prototypeGameMode.cpp">
-			<Filter>Source\prototype</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\prototype\prototypeGameMode.h">
-			<Filter>Source\prototype</Filter>
-		</ClInclude >
-		<Filter Include="Source\prototype\Resources">
-			<UniqueIdentifier>{C2465FD9-F3CA-42B5-9983-3D5C3D51E507}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="Source\prototype\Resources\Windows">
-			<UniqueIdentifier>{CB3ED8D0-965F-4DD8-A68E-63881304E5BD}</UniqueIdentifier>
-		</Filter>
-		<ResourceCompile Include="..\..\Source\prototype\Resources\Windows\prototype.rc">
-			<Filter>Source\prototype\Resources\Windows</Filter>
-		</ResourceCompile >
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\prototype.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{24F034E9-C3B2-49BE-A0CE-4B153B14413F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\prototype.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\prototypeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{78DEC6D3-7A05-4B11-AF37-80FC01C8C529}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\prototype">
+      <UniqueIdentifier>{5B2821F7-2DB1-43A2-8D27-CCF7A3A195EF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\prototype\prototype.Build.cs">
+      <Filter>Source\prototype</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\prototype\prototype.cpp">
+      <Filter>Source\prototype</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\prototype\prototype.h">
+      <Filter>Source\prototype</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\prototype\prototypeCharacter.cpp">
+      <Filter>Source\prototype</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\prototype\prototypeCharacter.h">
+      <Filter>Source\prototype</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\prototype\prototypeGameMode.cpp">
+      <Filter>Source\prototype</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\prototype\prototypeGameMode.h">
+      <Filter>Source\prototype</Filter>
+    </ClInclude>
+    <Filter Include="Source\prototype\Resources">
+      <UniqueIdentifier>{B03815AB-063C-4ADD-B0C6-9C12456D369D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\prototype\Resources\Windows">
+      <UniqueIdentifier>{89A59257-7DCB-4341-87D7-622844A3A2EE}</UniqueIdentifier>
+    </Filter>
+    <ResourceCompile Include="..\..\Source\prototype\Resources\Windows\prototype.rc">
+      <Filter>Source\prototype\Resources\Windows</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.h">
+      <Filter>Source\prototype</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.cpp">
+      <Filter>Source\prototype</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

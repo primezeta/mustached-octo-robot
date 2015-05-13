@@ -34,7 +34,7 @@ prototype/Intermediate/Config
 prototype/Intermediate/ReimportCache
 prototype/Intermediate/CachedAssetRegistry.bin
 prototype/Intermediate/Staging
-prototype/Saved/Logs
+prototype/Saved
 *.opensdf
 *.sdf
 *.suo
