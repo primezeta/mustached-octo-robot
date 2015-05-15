@@ -43,6 +43,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\prototype\Scene_LevelExtender.cpp" />
+    <ClInclude Include="..\..\Source\prototype\Scene_LevelExtender.h" />
     <None Include="..\..\prototype.uproject" />
     <None Include="..\..\Source\prototype.Target.cs" />
     <None Include="..\..\Source\prototypeEditor.Target.cs" />
@@ -52,9 +54,7 @@
     <None Include="..\..\Config\DefaultGame.ini" />
     <None Include="..\..\Config\DefaultInput.ini" />
     <None Include="..\..\Source\prototype\prototype.Build.cs" />
-    <ClCompile Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.cpp" />
     <ClCompile Include="..\..\Source\prototype\prototype.cpp" />
-    <ClInclude Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.h" />
     <ClInclude Include="..\..\Source\prototype\prototype.h" />
     <ClCompile Include="..\..\Source\prototype\prototypeCharacter.cpp" />
     <ClInclude Include="..\..\Source\prototype\prototypeCharacter.h" />

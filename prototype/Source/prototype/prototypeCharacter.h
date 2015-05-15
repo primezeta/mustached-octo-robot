@@ -18,11 +18,6 @@ class AprototypeCharacter : public ACharacter
 
 private:
 	bool CharacterIsSelected;
-	APlayerController const * PlayerController();
-	//UActorInteractionSceneComponent * ActorInteractor();
-	FVector MousePosition();
-	FVector2D ScreenMousePosition();
-	FVector PlayerPosition();
 
 protected:
 

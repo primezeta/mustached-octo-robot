@@ -2,30 +2,33 @@
 
 #include "prototype.h"
 #include "prototypeGameMode.h"
-#include "prototypeCharacter.h"
 
-// Set default pawn class to our Blueprinted character
-static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/SideScroller/Blueprints/SideScrollerCharacter"));
+TSubclassOf<ATriggerBox> AprototypeGameMode::LevelExtenderSceneClass;
 
 AprototypeGameMode::AprototypeGameMode(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/SideScroller/Blueprints/SideScrollerCharacter"));
-	if (PlayerPawnBPClass.Class == nullptr)
+	static ConstructorHelpers::FClassFinder<ATriggerBox> LevelExtenderSceneBP(TEXT("Blueprint'/Game/SideScroller/Blueprints/Trigger_ExtendLevel'"));
+	if (LevelExtenderSceneBP.Class == nullptr)
 	{
-		UE_LOG(CriticalErrors, All, TEXT("AprototypeGameMode: PlayerPawnBPClass.Class is null!"));
+		UE_LOG(CriticalErrors, All, TEXT("AprototypeGameMode: LevelExtenderSceneBP.Class is null!"));
 	}
-	DefaultPawnClass = PlayerPawnBPClass.Class;
+	LevelExtenderSceneClass = LevelExtenderSceneBP.Class;
 }
 
-void AprototypeGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
+AprototypeGameMode::~AprototypeGameMode()
 {
-	Super::InitGame(MapName, Options, ErrorMessage);
-	//Generate the map by creating the first level build trigger (prior to the EnteringMap state)
 }
 
-void AprototypeGameMode::LevelBuildTriggerResponse()
+void AprototypeGameMode::StartPlay()
 {
+	AprototypeCharacter * Player = Cast<AprototypeCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	FVector InitialBuildTriggerLocation = Player->GetActorLocation();
+	AActor * const Blocks = SpawnLevelBuildActorClass(InitialBuildTriggerLocation, FRotator::ZeroRotator);
+	GameLevelBuilders.Append(&Blocks, 1);
+}
 
+AActor * AprototypeGameMode::SpawnLevelBuildActorClass(const FVector &SpawnLocation, const FRotator &InitialRotation)
+{
+	return GetWorld()->SpawnActor(LevelExtenderSceneClass, &SpawnLocation, &InitialRotation);
 }

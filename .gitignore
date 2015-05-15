@@ -27,14 +27,14 @@
 *.out
 *.app
 
-prototype/Binaries
+prototype/Binaries/*
 prototype/DerivedDataCache
-prototype/Intermediate/Build
-prototype/Intermediate/Config
+prototype/Intermediate/Build/*
+prototype/Intermediate/Config/*
 prototype/Intermediate/ReimportCache
 prototype/Intermediate/CachedAssetRegistry.bin
-prototype/Intermediate/Staging
-prototype/Saved
+prototype/Intermediate/Staging/*
+prototype/Saved/*
 *.opensdf
 *.sdf
 *.suo

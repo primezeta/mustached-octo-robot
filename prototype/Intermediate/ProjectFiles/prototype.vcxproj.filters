@@ -64,12 +64,12 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.h">
+    <ClInclude Include="..\..\Source\prototype\Scene_LevelExtender.h">
       <Filter>Source\prototype</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\prototype\LevelBuildTrigger_Bounds.cpp">
+    <ClCompile Include="..\..\Source\prototype\Scene_LevelExtender.cpp">
       <Filter>Source\prototype</Filter>
     </ClCompile>
   </ItemGroup>
