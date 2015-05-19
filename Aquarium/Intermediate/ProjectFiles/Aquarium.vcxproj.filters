@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\Aquarium.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{C65029CB-08EE-499E-9D81-2AE6593F7B72}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Aquarium.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\AquariumEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{FA6C528D-B0AA-44FF-8255-0BAF5D7B218A}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\Aquarium">
+			<UniqueIdentifier>{1D21E971-857C-4F86-9F9B-5F27E139C121}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Aquarium\Aquarium.Build.cs">
+			<Filter>Source\Aquarium</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\Aquarium\Aquarium.cpp">
+			<Filter>Source\Aquarium</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Aquarium\Aquarium.h">
+			<Filter>Source\Aquarium</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Aquarium\AquariumGameMode.cpp">
+			<Filter>Source\Aquarium</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Aquarium\AquariumGameMode.h">
+			<Filter>Source\Aquarium</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Aquarium\AquariumPawn.cpp">
+			<Filter>Source\Aquarium</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Aquarium\AquariumPawn.h">
+			<Filter>Source\Aquarium</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
